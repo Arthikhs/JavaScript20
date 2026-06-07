@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+ 
+
+  <p id="myPara" title="Original Title">Hello World!</p>
+
+  <button onclick="changeAttribute()">Change Title</button>
+  <button onclick="showAttribute()">Show Title</button>
+  <button onclick="removeAttributeValue()">Remove Title</button>
+
+  <p id="output"></p>
+
+  <script>
+    const para = document.getElementById("myPara");
+    const output = document.getElementById("output");
+
+    // 1. setAttribute → change title
+    function changeAttribute() {
+      para.setAttribute("title", "New Title");
+      output.textContent = "Title changed!";
+    }
+
+    // 2. getAttribute → read title
+    function showAttribute() {
+      const titleText = para.getAttribute("title");
+      output.textContent = "Title is: " + titleText;
+    }
+
+    // 3. removeAttribute → remove title
+    function removeAttributeValue() {
+      para.removeAttribute("title");
+      output.textContent = "Title attribute removed!";
+    }
+  </script>
+</body>
+</html>

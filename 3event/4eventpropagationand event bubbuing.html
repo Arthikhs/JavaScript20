@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Bubbling Example</title>
+</head>
+<body>
+  <div id="outer">
+    <div id="inner">
+      <button id="myButton">Click Me</button>
+    </div>
+  </div>
+
+  <script>
+    // Get the reference of elements
+    var outer = document.getElementById("outer");
+    var inner = document.getElementById("inner");
+    var button = document.getElementById("myButton");
+
+    // Attach event handlers
+    outer.addEventListener("click", handleBubbling);
+    inner.addEventListener("click", handleBubbling);
+    button.addEventListener("click", handleBubbling);
+
+    function handleBubbling(event) {
+      console.log("Bubbling: " + this.id);
+      event.stopPropagation(); // Stop event from bubbling further
+    }
+  </script>
+</body>
+</html>

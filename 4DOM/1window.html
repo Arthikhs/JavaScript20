@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Window Object Demo</title>
+ 
+</head>
+<body>
+  <h1>Window Object Interactive Demo</h1>
+
+  <!-- Alert -->
+  <button onclick="showAlert()">Show Alert</button><br>
+
+  <!-- Inner Width -->
+  <button onclick="showWidth()">Show Window Width</button><br>
+
+  <!-- Location -->
+  <button onclick="showLocation()">Show Current URL</button>
+  <button onclick="redirectPage()">Go to Google</button><br>
+
+  <!-- Timeout -->
+  <button onclick="delayedAlert()">Delayed Alert (5s)</button>
+
+  <div id="output"></div>
+
+  <script>
+    // 1. window.alert()
+    function showAlert() {
+      window.alert("Hello! This is an alert from window.alert()");
+    }
+
+    // 2. window.innerWidth
+    function showWidth() {
+      const width = window.innerWidth;
+      document.getElementById("output").textContent = "Window width: " + width + "px";
+    }
+
+    // 3. window.location
+    function showLocation() {
+      const url = window.location.href;
+      document.getElementById("output").textContent = "Current URL: " + url;
+    }
+
+    function redirectPage() {
+      window.location.href = "https://www.google.com";
+    }
+
+    // 4. window.setTimeout()
+    function delayedAlert() {
+      window.setTimeout(function() {
+        window.alert("This alert appears after 5 seconds!");
+      }, 5000);
+    }
+  </script>
+</body>
+</html>

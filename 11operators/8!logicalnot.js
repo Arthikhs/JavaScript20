@@ -1,0 +1,10 @@
+console.log(!"hi");
+console.log(!5);
+console.log(!true);
+console.log(!false);
+//console.log(!undefind);
+console.log(!NaN);
+console.log(!{});
+console.log(![]);
+console.log(Boolean(null));
+console.log(!" ");

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #container { border: 1px solid #ccc; padding: 10px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+ 
+  <button onclick="addElement()">Add Element</button>
+  <button onclick="removeElement()">Remove Element</button>
+
+  <div id="container">
+    <p>Existing content inside container.</p>
+  </div>
+
+  <script>
+    let newEl; // will hold created element
+
+    function addElement() {
+      // 1. Create element
+      newEl = document.createElement("p");
+      newEl.textContent = "✅ I was added dynamically!";
+
+      // 2. Append to container
+      document.getElementById("container").appendChild(newEl);
+    }
+
+    function removeElement() {
+      const container = document.getElementById("container");
+      if (newEl && container.contains(newEl)) {
+        // 3. Remove child
+        container.removeChild(newEl);
+        newEl = null; // clear reference
+      } else {
+        alert("No dynamic element to remove!");
+      }
+    }
+  </script>
+</body>
+</html>

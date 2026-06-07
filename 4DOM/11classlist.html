@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .red { color: red; }
+    .bold { font-weight: bold; }
+    .blue-bg { background-color: lightblue; }
+  </style>
+</head>
+<body>
+  <h2 id="myText">Hello World!</h2>
+
+  <button onclick="addClass()">Add Red & Bold</button>
+  <button onclick="removeClass()">Remove Bold</button>
+  <button onclick="toggleClass()">Toggle Blue Background</button>
+  <button onclick="checkClass()">Check Red Class</button>
+
+  <p id="output"></p>
+
+  <script>
+    const text = document.getElementById("myText");
+    const output = document.getElementById("output");
+
+    // 1. Add classes
+    function addClass() {
+      text.classList.add("red", "bold");
+      output.textContent = "Added classes: red, bold";
+    }
+
+    // 2. Remove class
+    function removeClass() {
+      text.classList.remove("bold");
+      output.textContent = "Removed class: bold";
+    }
+
+    // 3. Toggle class
+    function toggleClass() {
+      text.classList.toggle("blue-bg");
+      output.textContent = "Toggled class: blue-bg";
+    }
+
+    // 4. Check if class exists
+    function checkClass() {
+      const hasRed = text.classList.contains("red");
+      output.textContent = hasRed ? "Text has red class" : "Text does NOT have red class";
+    }
+  </script>
+</body>
+</html>

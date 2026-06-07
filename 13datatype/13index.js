@@ -1,0 +1,9 @@
+var a = 3
+console.log(a+=12);//15
+console.log(a/=2);//7.5
+console.log(a*=12);//90
+console.log(a-=12);//78
+console.log(a%=2);//0
+console.log(a=+2);//2
+console.log(a=+12);//12
+console.log(a=-2);//-2
